@@ -149,6 +149,10 @@ module Spree
       Spree::Money.new(amount)
     end
 
+    def display_price_in_attribute(product_or_variant)
+      product_or_variant.price_in(current_currency).display_price.to_s
+    end
+
     def display_price(product_or_variant)
       product_or_variant.price_in(current_currency).display_price.to_html
     end
